@@ -43,7 +43,7 @@ resource "aws_internet_gateway" "main" {
 }
 
 resource "aws_eip" "nat" {
-  count = length(var.private_subnet_cidr)
+  count = length(var.public_subnet_cidr)
 
   vpc = true
   tags = {
@@ -73,6 +73,7 @@ resource "aws_route_table" "public" {
 
   tags = {
     Name = "${var.env_code}-public"
+    User = "Gwen"
   }
 }
 
@@ -87,6 +88,7 @@ resource "aws_route_table" "private" {
 
   tags = {
     Name = "${var.env_code}-private-${count.index}"
+    User = "Gwen"
   }
 }
 
