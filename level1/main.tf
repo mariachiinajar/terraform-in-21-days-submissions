@@ -62,7 +62,6 @@ resource "aws_nat_gateway" "main" {
   }
 }
 
-
 resource "aws_route_table" "public" {
   vpc_id = aws_vpc.main.id
 
@@ -73,7 +72,6 @@ resource "aws_route_table" "public" {
 
   tags = {
     Name = "${var.env_code}-public"
-    User = "Gwen"
   }
 }
 
@@ -88,7 +86,6 @@ resource "aws_route_table" "private" {
 
   tags = {
     Name = "${var.env_code}-private-${count.index}"
-    User = "Gwen"
   }
 }
 
