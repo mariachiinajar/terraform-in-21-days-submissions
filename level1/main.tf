@@ -46,6 +46,7 @@ resource "aws_eip" "nat" {
   count = length(var.public_subnet_cidr)
 
   vpc = true
+
   tags = {
     Name = "${var.env_code}-nat-${count.index}"
   }
@@ -77,8 +78,8 @@ resource "aws_route_table" "public" {
 
 resource "aws_route_table" "private" {
   count = length(var.private_subnet_cidr)
-
   vpc_id = aws_vpc.main.id
+
   route {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.main[count.index].id
