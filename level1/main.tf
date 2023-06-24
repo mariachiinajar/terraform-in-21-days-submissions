@@ -77,7 +77,7 @@ resource "aws_route_table" "public" {
 }
 
 resource "aws_route_table" "private" {
-  count = length(var.private_subnet_cidr)
+  count  = length(var.private_subnet_cidr)
   vpc_id = aws_vpc.main.id
 
   route {
