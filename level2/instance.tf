@@ -24,7 +24,7 @@ resource "aws_security_group" "public" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = ["YOUR_IP_ADDRESSS/32"]
+    cidr_blocks = ["YOUR_IP_ADDRESS/32"]
   }
 
   egress {
