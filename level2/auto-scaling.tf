@@ -9,9 +9,9 @@ resource "aws_launch_configuration" "main" {
 
 resource "aws_autoscaling_group" "main" {
   name             = var.env_code
-  min_size         = 3
-  max_size         = 7
-  desired_capacity = 5
+  min_size         = 1
+  max_size         = 4
+  desired_capacity = 2
 
   target_group_arns    = [aws_lb_target_group.main.arn]
   launch_configuration = aws_launch_configuration.main.name
