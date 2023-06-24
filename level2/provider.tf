@@ -9,10 +9,10 @@ terraform {
   required_version = ">= 1.2.0"
 
   backend "s3" {
-    bucket         = "terraform-remote-state-for-pr"
-    key            = "level2.tfstate"
+    bucket         = "terraform-revision"
+    key            = "level2-revision.tfstate"
     region         = "us-east-1"
-    dynamodb_table = "remote-state-PR"
+    dynamodb_table = "terraform-revision"
   }
 }
 
