@@ -10,3 +10,4 @@ module "vpc" {
 output "test" {
   value = module.vpc.vpc_cidr
 }
+

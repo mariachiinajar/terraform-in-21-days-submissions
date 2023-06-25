@@ -9,3 +9,10 @@ level2/.terraform/
 
 main.pem
 
+# modules
+/asg/.terraform/
+/lb/.terraform/
+/vpc/.terraform/
+.terraform/
+pickup.txt
+

@@ -8,3 +8,4 @@ module "asg" {
   loadbalancer_sg  = module.lb.loadbalancer_sg
   ami_id           = data.aws_ami.amazonlinux.id
 }
+
