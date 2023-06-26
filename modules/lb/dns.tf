@@ -1,4 +1,5 @@
 data "aws_route53_zone" "main" {
+  #name = "your-new-domain.com"
   name = "your-new-domain.com"
 }
 
