@@ -42,16 +42,16 @@ module "rds_sg" {
 module "rds" {
   source = "terraform-aws-modules/rds/aws"
 
-  identifier             = var.env_code
-  allocated_storage      = 20
-  storage_type           = "gp2"
-  engine                 = "mysql"
-  engine_version         = "5.7"
-  instance_class         = "db.t3.micro"
-  port                   = "3306"
-  db_name                = "mydb"
-  username               = "admin"
-  password               = jsondecode(data.aws_secretsmanager_secret_version.rds_password.secret_string)["password"]
+  identifier        = var.env_code
+  allocated_storage = 20
+  storage_type      = "gp2"
+  engine            = "mysql"
+  engine_version    = "5.7"
+  instance_class    = "db.t3.micro"
+  port              = "3306"
+  db_name           = "mydb"
+  username          = "admin"
+  password          = jsondecode(data.aws_secretsmanager_secret_version.rds_password.secret_string)["password"]
 
   skip_final_snapshot = true
   multi_az            = false
